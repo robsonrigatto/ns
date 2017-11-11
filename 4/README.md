@@ -3,7 +3,7 @@
 Trata-se de um problema de concorrência em que processos necessitam utilizar recursos, porém outros processos estão utilizando.
 Exemplificando, um Processo A está utilizando um Recurso X mas necessita de um Recurso Y, porém um outro Processo B está utilizando o Recurso Y e, por coincidência, necessita do Recurso X.
 
-![](Deadlock_of_Threads.jpg)
+<img src="Deadlock_of_Threads.jpg" width="400" height="auto">
 
 Esse cenário faz com que ambos processos fiquem presos no mesmo estado, uma vez que um precisa do recurso do outro para continuar com sua execução.
 
