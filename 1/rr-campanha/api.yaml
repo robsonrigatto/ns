@@ -1,0 +1,120 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: "Campanha de Times"
+host: "localhost:8080"
+basePath: "/campanhas"
+schemes:
+- "http"
+paths:
+  /campanhas:
+    post:
+      tags:
+      - "campanha"
+      summary: "Cria uma campanha"
+      description: ""
+      operationId: "create"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Campanha a ser criada no banco de dados"
+        required: true
+        schema:
+          $ref: "#/definitions/Campanha"
+      responses:
+        201:
+          description: "Sucesso"
+        405:
+          description: "Entrada inválida"
+        409:
+          description: "Campanha já existente"
+  /campanhas/{id}:
+    get:
+      tags:
+      - "campanha"
+      summary: "Busca campanha pelo ID"
+      description: "Retorna uma campanha"
+      operationId: "retrieve"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID da campanha"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "Sucesso"
+          schema:
+            $ref: "#/definitions/Campanha"
+        404:
+          description: "Campanha não existe"
+    post:
+      tags:
+      - "campanha"
+      summary: "Atualiza a campanha com as informações no corpo da requisição"
+      description: ""
+      operationId: "update"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of pet that needs to be updated"
+        required: true
+        type: "integer"
+        format: "int64"
+      - in: "body"
+        name: "body"
+        description: "Campanha a ser criada no banco de dados"
+        required: true
+        schema:
+          $ref: "#/definitions/Campanha"
+      responses:
+        404:
+          description: "Campanha não existe"
+        405:
+          description: "Entrada inválida"
+    delete:
+      tags:
+      - "campanha"
+      summary: "Exclui uma campanha"
+      description: ""
+      operationId: "delete"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID da campanha"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        204:
+          description: "Sucesso"
+        404:
+          description: "Campanha não existe"
+definitions:
+  Campanha:
+    type: "object"
+    properties:
+      nome:
+        type: "string"
+      timeId:
+        type: "integer"
+        format: "int64"
+      inicioVigencia:
+        type: "string"
+        format: "date"
+      terminoVigencia:
+        type: "string"
+        format: "date"
