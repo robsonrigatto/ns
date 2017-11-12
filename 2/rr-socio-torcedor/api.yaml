@@ -1,0 +1,126 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: "Sócio Torcedor"
+host: "localhost:9090"
+basePath: "/clientes"
+schemes:
+- "http"
+paths:
+  /clientes:
+    post:
+      tags:
+      - "cliente"
+      summary: "Cria uma sócio torcedor"
+      description: ""
+      operationId: "create"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Cliente a ser criada no banco de dados"
+        required: true
+        schema:
+          $ref: "#/definitions/Cliente"
+      responses:
+        201:
+          description: "Sucesso"
+        405:
+          description: "Entrada inválida"
+        409:
+          description: "Campanha já existente"
+  /clientes/{id}:
+    get:
+      tags:
+      - "cliente"
+      summary: "Busca cliente pelo ID"
+      description: "Retorna um cliente"
+      operationId: "retrieve"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID do cliente"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "Sucesso"
+          schema:
+            $ref: "#/definitions/Cliente"
+        404:
+          description: "Cliente não existe"
+    post:
+      tags:
+      - "cliente"
+      summary: "Atualiza o cliente com as informações no corpo da requisição"
+      description: ""
+      operationId: "update"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID do cliente"
+        required: true
+        type: "integer"
+        format: "int64"
+      - in: "body"
+        name: "body"
+        description: "Cliente a ser criada no banco de dados"
+        required: true
+        schema:
+          $ref: "#/definitions/Cliente"
+      responses:
+        404:
+          description: "Cliente não existe"
+        405:
+          description: "Entrada inválida"
+    delete:
+      tags:
+      - "cliente"
+      summary: "Exclui um cliente"
+      description: ""
+      operationId: "delete"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID da campanha"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        204:
+          description: "Sucesso"
+        404:
+          description: "Cliente não existe"
+definitions:
+  Cliente:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+        format: "email"
+      nomeCompleto:
+        type: "string"
+      timeId:
+        type: "integer"
+        format: "int64"
+        enum: 
+        - 1 (Corinthans)
+        - 2 (Santos)
+        - 3 (São Paulo)
+        - 4 (Santos)
+      dataNascimento:
+        type: "string"
+        format: "date"
+    
