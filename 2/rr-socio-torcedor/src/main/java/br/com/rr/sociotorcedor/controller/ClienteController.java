@@ -43,6 +43,9 @@ public class ClienteController {
 		
 		} catch (ClienteAlreadyExistsException e) {
 			return new ResponseEntity<String>(HttpStatus.CONFLICT);
+		
+		} catch (Exception e) {
+			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		}
 		
 		HttpHeaders headers = new HttpHeaders();
@@ -52,13 +55,12 @@ public class ClienteController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<ClienteDTO> retrieve(@PathVariable("id") Long id) {
-		ClienteDTO dto = null;
 		try {
-			dto = this.clienteService.retrieve(id);
+			ClienteDTO dto = this.clienteService.retrieve(id);
+			return new ResponseEntity<ClienteDTO>(dto, HttpStatus.OK);
 		} catch (EntityNotFoundException e) {
 			return new ResponseEntity<ClienteDTO>(HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<ClienteDTO>(dto, HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}/campanhas")
@@ -85,6 +87,9 @@ public class ClienteController {
 			
 		} catch (EntityNotFoundException e) {
 			return new ResponseEntity<ClienteDTO>(HttpStatus.NOT_FOUND);
+		
+		} catch (Exception e) {
+			return new ResponseEntity<ClienteDTO>(HttpStatus.BAD_REQUEST);
 		}
 		
 		return new ResponseEntity<ClienteDTO>(updatedDTO, HttpStatus.OK);

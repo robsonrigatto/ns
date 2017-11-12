@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +16,7 @@ import br.com.rr.campanha.dto.CampanhaDTO;
 import br.com.rr.campanha.exception.CampanhaAlreadyExistsException;
 import br.com.rr.campanha.exception.CampanhaNotFoundException;
 import br.com.rr.campanha.helper.TerminoVigenciaHelper;
-import br.com.rr.campanha.integration.ClienteIntegration;
+import br.com.rr.campanha.integration.CampanhaIntegration;
 import br.com.rr.campanha.repository.CampanhaRepository;
 import br.com.rr.campanha.service.CampanhaService;
 
@@ -25,7 +27,7 @@ public class CampanhaServiceImpl implements CampanhaService {
 	private CampanhaRepository campanhaRepository;
 	
 	@Autowired
-	private ClienteIntegration clienteIntegration;
+	private CampanhaIntegration clienteIntegration;
 	
 	@Autowired
 	private TerminoVigenciaHelper terminoVigenciaHelper;
@@ -88,6 +90,9 @@ public class CampanhaServiceImpl implements CampanhaService {
 	@Override
 	public CampanhaDTO retrieve(Long campanhaId) {
 		Campanha entity = this.campanhaRepository.findOne(campanhaId);
+		if(entity == null) {
+			throw new EntityNotFoundException();
+		}
 		return entityToDTO(entity);
 	}
 

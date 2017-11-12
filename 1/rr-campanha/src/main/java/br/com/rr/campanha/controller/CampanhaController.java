@@ -2,6 +2,8 @@ package br.com.rr.campanha.controller;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -36,6 +38,9 @@ public class CampanhaController {
 		
 		} catch (CampanhaAlreadyExistsException e) {
 			return new ResponseEntity<String>(HttpStatus.CONFLICT);
+			
+		} catch (Exception e) {
+			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		}
 		
 		HttpHeaders headers = new HttpHeaders();
@@ -45,8 +50,13 @@ public class CampanhaController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<CampanhaDTO> retrieve(@PathVariable("id") Long id) {
-		CampanhaDTO dto = this.campanhaService.retrieve(id);
-		return new ResponseEntity<CampanhaDTO>(dto, HttpStatus.OK);
+		try {
+			CampanhaDTO dto = this.campanhaService.retrieve(id);
+			return new ResponseEntity<CampanhaDTO>(dto, HttpStatus.OK);
+			
+		} catch (EntityNotFoundException e) {
+			return new ResponseEntity<CampanhaDTO>(HttpStatus.NOT_FOUND);
+		}
 	}
 	
 	@GetMapping("/times/{id}")
@@ -64,6 +74,9 @@ public class CampanhaController {
 			
 		} catch (CampanhaNotFoundException e) {
 			return new ResponseEntity<CampanhaDTO>(HttpStatus.NOT_FOUND);
+			
+		} catch (Exception e) {
+			return new ResponseEntity<CampanhaDTO>(HttpStatus.BAD_REQUEST);
 		}
 		
 		return new ResponseEntity<CampanhaDTO>(updatedDTO, HttpStatus.OK);
