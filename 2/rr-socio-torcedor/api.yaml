@@ -94,7 +94,7 @@ paths:
       parameters:
       - name: "id"
         in: "path"
-        description: "ID da campanha"
+        description: "ID da cliente"
         required: true
         type: "integer"
         format: "int64"
@@ -103,6 +103,32 @@ paths:
           description: "Sucesso"
         404:
           description: "Cliente não existe"
+  /clientes/{id}/campanhas:
+    get:
+      tags:
+      - "cliente"
+      summary: "Busca campanhas pelo ID do cliente"
+      description: "Retorna um cliente"
+      operationId: "retrieve campanhas by cliente"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID do cliente"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "Sucesso"
+          schema:
+            type: "array"
+            items:
+              type: "integer"
+        404:
+          description: "Cliente não existe"
+  
 definitions:
   Cliente:
     type: "object"
@@ -123,4 +149,3 @@ definitions:
       dataNascimento:
         type: "string"
         format: "date"
-    
