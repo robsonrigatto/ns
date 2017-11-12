@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Sócio Torcedor</title>
+                                                         </head>
+<body>
+<div class="container">
+    <h1>Sócio Torcedor</h1>
+    <p class="sw-info">
+        Base URL: <span class="sw-info-basePath">/clientes</span>,
+        Version: <span class="sw-info-version">0.0.1</span>
+    </p>
+    <p></p>
+    
+    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        http
+    </div>
+    
+        <h2 id="swagger--summary-no-tags">Summary</h2>
+        <table class="table table-bordered table-condensed swagger--summary">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--clientes">/clientes</a>
+                            </td>
+                        <td>
+                            <a href="#operation--clientes-post">POST</a>
+                        </td>
+                        <td>
+                            <p>Cria uma sócio torcedor</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="3">
+                                <a href="#path--clientes--id-">/clientes/{id}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--clientes--id--delete">DELETE</a>
+                        </td>
+                        <td>
+                            <p>Exclui um cliente</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--clientes--id--get">GET</a>
+                        </td>
+                        <td>
+                            <p>Busca cliente pelo ID</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--clientes--id--post">POST</a>
+                        </td>
+                        <td>
+                            <p>Atualiza o cliente com as informações no corpo da requisição</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--clientes--id--campanhas">/clientes/{id}/campanhas</a>
+                            </td>
+                        <td>
+                            <a href="#operation--clientes--id--campanhas-get">GET</a>
+                        </td>
+                        <td>
+                            <p>Busca campanhas pelo ID do cliente</p>
+        
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    
+    
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--clientes"></span>
+            <div id="operation--clientes-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Cria uma s&#xF3;cio torcedor</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/clientes</strong></h3>
+                        Tags:
+                            <a href="#tag-cliente">cliente</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                        
+                            <section class="sw-request-body">
+                                
+                                    <p><span class="label label-default">application/json</span> 
+                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><p>Cliente a ser criada no banco de dados</p>
+                        </p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                            <div  class="panel panel-definition">
+                                <div class="panel-body">
+                                            <a class="json-schema-ref" href="#/definitions/Cliente">Cliente</a>
+                                </div>
+                            </div></div>
+                                        </div>
+                            </section>        
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-201">
+                                        201 Created
+                                    
+                                    </dt>
+                                    <dd class="sw-response-201">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Sucesso</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-405">
+                                        405 Method Not Allowed
+                                    
+                                    </dt>
+                                    <dd class="sw-response-405">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Entrada inválida</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-409">
+                                        409 Conflict
+                                    
+                                    </dt>
+                                    <dd class="sw-response-409">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Campanha já existente</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+        
+        <span id="path--clientes--id-"></span>
+            <div id="operation--clientes--id--delete" class="swagger--panel-operation-delete panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Exclui um cliente</div>
+                    <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/clientes/{id}</strong></h3>
+                        Tags:
+                            <a href="#tag-cliente">cliente</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            </td>
+                                            <td><p>ID da cliente</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-204">
+                                        204 No Content
+                                    
+                                    </dt>
+                                    <dd class="sw-response-204">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Sucesso</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Cliente não existe</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+            <div id="operation--clientes--id--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Busca cliente pelo ID</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/clientes/{id}</strong></h3>
+                        Tags:
+                            <a href="#tag-cliente">cliente</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retorna um cliente</p>
+            
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            </td>
+                                            <td><p>ID do cliente</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Sucesso</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Cliente">Cliente</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Cliente não existe</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+            <div id="operation--clientes--id--post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Atualiza o cliente com as informa&#xE7;&#xF5;es no corpo da requisi&#xE7;&#xE3;o</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/clientes/{id}</strong></h3>
+                        Tags:
+                            <a href="#tag-cliente">cliente</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                        
+                            <section class="sw-request-body">
+                                
+                                    <p><span class="label label-default">application/json</span> 
+                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><p>Cliente a ser criada no banco de dados</p>
+                        </p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                            <div  class="panel panel-definition">
+                                <div class="panel-body">
+                                            <a class="json-schema-ref" href="#/definitions/Cliente">Cliente</a>
+                                </div>
+                            </div></div>
+                                        </div>
+                            </section>        
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            </td>
+                                            <td><p>ID do cliente</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Cliente não existe</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-405">
+                                        405 Method Not Allowed
+                                    
+                                    </dt>
+                                    <dd class="sw-response-405">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Entrada inválida</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+        
+        <span id="path--clientes--id--campanhas"></span>
+            <div id="operation--clientes--id--campanhas-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Busca campanhas pelo ID do cliente</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/clientes/{id}/campanhas</strong></h3>
+                        Tags:
+                            <a href="#tag-cliente">cliente</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retorna um cliente</p>
+            
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            </td>
+                                            <td><p>ID do cliente</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Sucesso</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">integer</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Cliente não existe</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+    
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Cliente" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Cliente"></a>Cliente:
+                                    <span class="json-property-type">
+                <span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                    <section class="json-schema-properties">
+                                        <dl>
+                                                <dt data-property-name="email">
+                                                    <span class="json-property-name">email:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>    <span class="json-property-format">(email)</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="nomeCompleto">
+                                                    <span class="json-property-name">nomeCompleto:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="timeId">
+                                                    <span class="json-property-name">timeId:</span>
+                                                    
+                                                    <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                    <span class="json-property-enum-item">1 (Corinthans)</span>
+                                                                ,
+                                                                    <span class="json-property-enum-item">2 (Palmeiras)</span>
+                                                                ,
+                                                                    <span class="json-property-enum-item">3 (São Paulo)</span>
+                                                                ,
+                                                                    <span class="json-property-enum-item">4 (Santos)</span>
+                                                                
+                                                            }
+                                                            </span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="dataNascimento">
+                                                    <span class="json-property-name">dataNascimento:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>    <span class="json-property-format">(date)</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                        </dl>
+                                    </section>
+                    </div>
+                </div>
+</div>
+<script src="bundle.js" type="application/javascript"></script>
+</body>
+</html>

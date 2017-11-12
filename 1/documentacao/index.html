@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Campanha de Times</title>
+                                                         </head>
+<body>
+<div class="container">
+    <h1>Campanha de Times</h1>
+    <p class="sw-info">
+        Base URL: <span class="sw-info-basePath">/campanhas</span>,
+        Version: <span class="sw-info-version">0.0.1</span>
+    </p>
+    <p></p>
+    
+    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        http
+    </div>
+    
+        <h2 id="swagger--summary-no-tags">Summary</h2>
+        <table class="table table-bordered table-condensed swagger--summary">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--campanhas">/campanhas</a>
+                            </td>
+                        <td>
+                            <a href="#operation--campanhas-post">POST</a>
+                        </td>
+                        <td>
+                            <p>Cria uma campanha</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="3">
+                                <a href="#path--campanhas--id-">/campanhas/{id}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--campanhas--id--delete">DELETE</a>
+                        </td>
+                        <td>
+                            <p>Exclui uma campanha</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--campanhas--id--get">GET</a>
+                        </td>
+                        <td>
+                            <p>Busca campanha pelo ID</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--campanhas--id--post">POST</a>
+                        </td>
+                        <td>
+                            <p>Atualiza a campanha com as informações no corpo da requisição</p>
+        
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    
+    
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--campanhas"></span>
+            <div id="operation--campanhas-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Cria uma campanha</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/campanhas</strong></h3>
+                        Tags:
+                            <a href="#tag-campanha">campanha</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                        
+                            <section class="sw-request-body">
+                                
+                                    <p><span class="label label-default">application/json</span> 
+                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><p>Campanha a ser criada no banco de dados</p>
+                        </p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                            <div  class="panel panel-definition">
+                                <div class="panel-body">
+                                            <a class="json-schema-ref" href="#/definitions/Campanha">Campanha</a>
+                                </div>
+                            </div></div>
+                                        </div>
+                            </section>        
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-201">
+                                        201 Created
+                                    
+                                    </dt>
+                                    <dd class="sw-response-201">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Sucesso</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-405">
+                                        405 Method Not Allowed
+                                    
+                                    </dt>
+                                    <dd class="sw-response-405">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Entrada inválida</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-409">
+                                        409 Conflict
+                                    
+                                    </dt>
+                                    <dd class="sw-response-409">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Campanha já existente</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+        
+        <span id="path--campanhas--id-"></span>
+            <div id="operation--campanhas--id--delete" class="swagger--panel-operation-delete panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Exclui uma campanha</div>
+                    <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/campanhas/{id}</strong></h3>
+                        Tags:
+                            <a href="#tag-campanha">campanha</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            </td>
+                                            <td><p>ID da campanha</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-204">
+                                        204 No Content
+                                    
+                                    </dt>
+                                    <dd class="sw-response-204">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Sucesso</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Campanha não existe</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+            <div id="operation--campanhas--id--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Busca campanha pelo ID</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/campanhas/{id}</strong></h3>
+                        Tags:
+                            <a href="#tag-campanha">campanha</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retorna uma campanha</p>
+            
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            </td>
+                                            <td><p>ID da campanha</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Sucesso</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Campanha">Campanha</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Campanha não existe</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+            <div id="operation--campanhas--id--post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Atualiza a campanha com as informa&#xE7;&#xF5;es no corpo da requisi&#xE7;&#xE3;o</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/campanhas/{id}</strong></h3>
+                        Tags:
+                            <a href="#tag-campanha">campanha</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                        
+                            <section class="sw-request-body">
+                                
+                                    <p><span class="label label-default">application/json</span> 
+                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><p>Campanha a ser criada no banco de dados</p>
+                        </p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                            <div  class="panel panel-definition">
+                                <div class="panel-body">
+                                            <a class="json-schema-ref" href="#/definitions/Campanha">Campanha</a>
+                                </div>
+                            </div></div>
+                                        </div>
+                            </section>        
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                id
+                                            </td>
+                                            <td><p>ID da campanha</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Campanha não existe</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-405">
+                                        405 Method Not Allowed
+                                    
+                                    </dt>
+                                    <dd class="sw-response-405">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Entrada inválida</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+    
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Campanha" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Campanha"></a>Campanha:
+                                    <span class="json-property-type">
+                <span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                    <section class="json-schema-properties">
+                                        <dl>
+                                                <dt data-property-name="nome">
+                                                    <span class="json-property-name">nome:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="timeId">
+                                                    <span class="json-property-name">timeId:</span>
+                                                    
+                                                    <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                                    <span class="json-property-enum-item">1 (Corinthans)</span>
+                                                                ,
+                                                                    <span class="json-property-enum-item">2 (Palmeiras)</span>
+                                                                ,
+                                                                    <span class="json-property-enum-item">3 (São Paulo)</span>
+                                                                ,
+                                                                    <span class="json-property-enum-item">4 (Santos)</span>
+                                                                
+                                                            }
+                                                            </span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="inicioVigencia">
+                                                    <span class="json-property-name">inicioVigencia:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>    <span class="json-property-format">(date)</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="terminoVigencia">
+                                                    <span class="json-property-name">terminoVigencia:</span>
+                                                    
+                                                    <span class="json-property-type">string</span>    <span class="json-property-format">(date)</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                        </dl>
+                                    </section>
+                    </div>
+                </div>
+</div>
+<script src="bundle.js" type="application/javascript"></script>
+</body>
+</html>

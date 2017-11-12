@@ -10,7 +10,7 @@ public class ClienteDTO {
 	private String email;
 	private String nomeCompleto;
 	
-	@JsonFormat(pattern="dd/MM/yyyy")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dataNascimento;
 	
 	private Long timeId;

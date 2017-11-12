@@ -10,10 +10,10 @@ public class CampanhaDTO {
 	private String nome;
 	private Long timeId;
 	
-	@JsonFormat(pattern="dd/MM/yyyy")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date inicioVigencia;
 
-	@JsonFormat(pattern="dd/MM/yyyy")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date terminoVigencia;
 	
 	public CampanhaDTO() {
