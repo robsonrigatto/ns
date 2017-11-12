@@ -114,7 +114,7 @@ definitions:
         format: "int64"
         enum: 
         - 1 (Corinthans)
-        - 2 (Santos)
+        - 2 (Palmeiras)
         - 3 (São Paulo)
         - 4 (Santos)
       inicioVigencia:
