@@ -112,6 +112,11 @@ definitions:
       timeId:
         type: "integer"
         format: "int64"
+        enum: 
+        - 1 (Corinthans)
+        - 2 (Santos)
+        - 3 (São Paulo)
+        - 4 (Santos)
       inicioVigencia:
         type: "string"
         format: "date"
